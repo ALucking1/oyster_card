@@ -5,32 +5,6 @@ describe Journey do
   let(:start_station) { double :start_station, :name => "Kings X", :zone => 2}
   let(:end_station) { double :end_station, :name => "Liverpool", :zone => 1}
 
-  # describe '#start' do
-  #
-  #   it 'has an entry station when the journey is started' do
-  #     tube_journey.start(start_station)
-  #     expect(tube_journey.journey[:entry_station]).to eq "Kings X"
-  #   end
-  #
-  #   it 'has and entry zone when the journey is started' do
-  #     tube_journey.start(start_station)
-  #     expect(tube_journey.journey[:entry_zone]).to eq 2
-  #   end
-  # end
-  #
-  # describe '#finish' do
-  #
-  #   it 'has an exit station when the journey is finished' do
-  #     tube_journey.finish(end_station)
-  #     expect(tube_journey.journey[:exit_station]).to eq "Liverpool"
-  #   end
-  #
-  #   it 'has an exit zone when the journey is finished' do
-  #     tube_journey.finish(end_station)
-  #     expect(tube_journey.journey[:exit_zone]).to eq 1
-  #   end
-  # end
-
   describe '#complete' do
 
     it 'should tell us if a journey is complete' do

@@ -5,14 +5,6 @@ describe JourneyLog do
   let(:start_station) { double :start_station, :name => "Kings X", :zone => 2}
   let(:end_station) { double :end_station, :name => "Liverpool", :zone => 1}
 
-  #let(:journey_class) {Journey.new}
-
-  # it 'starts a journey' do
-  #
-  #   expect(journey_log.journey_class).to eq journey_class
-  # end
-
-
     describe '#start' do
 
       it 'has an entry station when the journey is started' do

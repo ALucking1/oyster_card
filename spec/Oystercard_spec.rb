@@ -60,6 +60,7 @@ describe Oystercard do
     before do
       card.top_up(15)
       card.touch_in(start_station)
+
     end
     it { is_expected.to respond_to(:touch_out).with(1).argument }
 

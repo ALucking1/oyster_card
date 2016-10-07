@@ -9,7 +9,6 @@ class Oystercard
 
   def initialize(balance=0)
     @balance = balance
-    # @journey_history = []
     @in_use = false
     @journey_log = JourneyLog.new
   end
@@ -34,6 +33,7 @@ class Oystercard
     deduct(@journey_log.journey_class.fare)
     @in_use = false
     @journey_log.history
+    #@journey_log.clear_journey_class
   end
 
 
@@ -42,9 +42,4 @@ private
   def deduct(amount)
     @balance -= amount
   end
-
-  # def history
-  #   @journey_history << @current_journey
-  # end
-
 end
