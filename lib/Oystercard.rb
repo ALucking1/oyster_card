@@ -33,7 +33,7 @@ class Oystercard
     deduct(@journey_log.journey_class.fare)
     @in_use = false
     @journey_log.history
-    #@journey_log.clear_journey_class
+    @journey_log.clear_journey_class
   end
 
 

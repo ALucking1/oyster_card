@@ -24,8 +24,8 @@ def history
   @journey_history << @journey_class
 end
 
-# def clear_journey_class
-#   @journey_class = Journey.new
-# end
+def clear_journey_class
+  @journey_class = Journey.new
+end
 
 end

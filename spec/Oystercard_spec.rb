@@ -70,7 +70,6 @@ describe Oystercard do
     end
 
     it "should charge the card the minimum fare if journey completed correctly" do
-      card.touch_out(end_station)
       expect {card.touch_out(end_station)}.to change{card.balance}.by(-Journey::MINIMUM_FARE)
     end
 
