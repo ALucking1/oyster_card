@@ -27,8 +27,14 @@ describe Journey do
   describe '#fare' do
 
     it 'returns the correct fare if journey is complete' do
-      tube_journey.journey[:entry_zone] = start_station
-      tube_journey.journey[:exit_zone] = end_station
+      tube_journey.journey[:entry_station] = start_station.name
+      tube_journey.journey[:exit_station] = end_station
+      tube_journey.journey[:entry_zone] = start_station.zone
+      tube_journey.journey[:exit_zone] = end_station.zone
+p tube_journey.entry_station
+p tube_journey.complete?
+      p tube_journey.entry_zone
+      p tube_journey.exit_zone
       expect(tube_journey.fare).to eq 2
     end
 

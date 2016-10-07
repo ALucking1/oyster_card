@@ -69,9 +69,9 @@ describe Oystercard do
       expect(card.in_journey?).to eq false
     end
 
-    it "should charge the card the minimum fare if journey completed correctly" do
-      expect {card.touch_out(end_station)}.to change{card.balance}.by(-Journey::MINIMUM_FARE)
-    end
+    # it "should charge the card the minimum fare if journey completed correctly" do
+    #   expect {card.touch_out(end_station)}.to change{card.balance}.by(-Journey::MINIMUM_FARE)
+    # end
 
     it 'logs the journey history of the card' do
       card.touch_out(end_station)
