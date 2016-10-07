@@ -15,6 +15,6 @@ class Journey
   end
 
   def fare
-    complete? ? MINIMUM_FARE : PENALTY_FARE
+    complete? ? (@journey[:entry_zone] - @journey[:exit_zone]).abs : PENALTY_FARE
   end
 end

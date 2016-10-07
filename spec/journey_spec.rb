@@ -25,10 +25,11 @@ describe Journey do
   end
 
   describe '#fare' do
-    it 'returns the minimum fare if journey is complete' do
-      tube_journey.journey[:entry_station] = start_station
-      tube_journey.journey[:exit_station] = end_station
-      expect(tube_journey.fare).to eq Journey::MINIMUM_FARE
+
+    it 'returns the correct fare if journey is complete' do
+      tube_journey.journey[:entry_zone] = start_station
+      tube_journey.journey[:exit_zone] = end_station
+      expect(tube_journey.fare).to eq 2
     end
 
     it 'returns a penalty fare when touching out without thouching in' do
