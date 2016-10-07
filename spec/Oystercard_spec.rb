@@ -11,7 +11,7 @@ describe Oystercard do
   end
 
   it 'have a clear journey history by default' do
-    expect(card.journey_history).to be_empty
+    expect(card.journey_log.journey_history).to be_empty
   end
 
   it 'should not be in use when created' do
@@ -47,10 +47,10 @@ describe Oystercard do
       expect(card).to be_in_journey
     end
 
-    it 'should clear preivous journey' do
+    it 'should clear previous journey' do
       card.top_up(10)
       card.touch_in(start_station)
-      expect(card.current_journey.journey[:exit_station]).to eq nil
+      expect(card.journey_log.journey_class.journey[:exit_station]).to eq nil
     end
 
   end
@@ -75,7 +75,7 @@ describe Oystercard do
 
     it 'logs the journey history of the card' do
       card.touch_out(end_station)
-      expect(card.journey_history[-1].journey).to include({entry_station: "Kings X", entry_zone: 2, exit_station: "Liverpool", exit_zone: 1})
+      expect(card.journey_log.journey_history[-1].journey).to include({entry_station: "Kings X", entry_zone: 2, exit_station: "Liverpool", exit_zone: 1})
     end
   end
 

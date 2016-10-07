@@ -17,28 +17,27 @@ describe JourneyLog do
 
       it 'has an entry station when the journey is started' do
         journey_log.start(start_station)
-
         expect(journey_log.journey_class.journey[:entry_station]).to eq "Kings X"
       end
 
       it 'has and entry zone when the journey is started' do
-        journey_log.journey_class.start(start_station)
+        journey_log.start(start_station)
         expect(journey_log.journey_class.journey[:entry_zone]).to eq 2
       end
     end
 
-    # describe '#finish' do
-    #
-    #   it 'has an exit station when the journey is finished' do
-    #     tube_journey.finish(end_station)
-    #     expect(tube_journey.journey[:exit_station]).to eq "Liverpool"
-    #   end
-    #
-    #   it 'has an exit zone when the journey is finished' do
-    #     tube_journey.finish(end_station)
-    #     expect(tube_journey.journey[:exit_zone]).to eq 1
-    #   end
-    # end
+    describe '#finish' do
+
+      it 'has an exit station when the journey is finished' do
+        journey_log.finish(end_station)
+        expect(journey_log.journey_class.journey[:exit_station]).to eq "Liverpool"
+      end
+
+      it 'has an exit zone when the journey is finished' do
+        journey_log.finish(end_station)
+        expect(journey_log.journey_class.journey[:exit_zone]).to eq 1
+      end
+    end
 
 
 end
